@@ -7,10 +7,9 @@ import { CookieModule } from 'ngx-cookie';
 import { TranslateModule, TranslateLoader, MissingTranslationHandler } from '@ngx-translate/core';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { NgJhipsterModule, translatePartialLoader, missingTranslationHandler, JhiConfigService, JhiLanguageService } from 'ng-jhipster';
-import locale from '@angular/common/locales/fr';
+import locale from '@angular/common/locales/en';
 
 import * as moment from 'moment';
-import { FindLanguageFromKeyPipe } from 'app/shared/language/find-language-from-key.pipe';
 import { NgbDateAdapter, NgbDatepickerConfig } from '@ng-bootstrap/ng-bootstrap';
 import { NgbDateMomentAdapter } from 'app/shared/util/datepicker-adapter';
 
@@ -31,7 +30,7 @@ import { fontAwesomeIcons } from './icons/font-awesome-icons';
       alertAsToast: false,
       alertTimeout: 5000,
       i18nEnabled: true,
-      defaultI18nLang: 'fr'
+      defaultI18nLang: 'en'
     }),
     TranslateModule.forRoot({
       loader: {
@@ -50,10 +49,9 @@ import { fontAwesomeIcons } from './icons/font-awesome-icons';
     Title,
     {
       provide: LOCALE_ID,
-      useValue: 'fr'
+      useValue: 'en'
     },
     { provide: NgbDateAdapter, useClass: NgbDateMomentAdapter },
-    FindLanguageFromKeyPipe,
     DatePipe,
     {
       provide: HTTP_INTERCEPTORS,
@@ -77,7 +75,7 @@ import { fontAwesomeIcons } from './icons/font-awesome-icons';
     }
   ]
 })
-export class OpenCivicEngagementCoreModule {
+export class JhipsterCoreModule {
   constructor(iconLibrary: FaIconLibrary, dpConfig: NgbDatepickerConfig, languageService: JhiLanguageService) {
     registerLocaleData(locale);
     iconLibrary.addIcons(...fontAwesomeIcons);

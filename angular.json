@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "open-civic-engagement": {
+    "jhipster": {
       "root": "",
       "sourceRoot": "src/main/webapp",
       "projectType": "application",
@@ -29,7 +29,7 @@
       "architect": {}
     }
   },
-  "defaultProject": "open-civic-engagement",
+  "defaultProject": "jhipster",
   "cli": {
     "packageManager": "npm"
   }

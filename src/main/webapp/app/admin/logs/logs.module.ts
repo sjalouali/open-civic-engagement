@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { OpenCivicEngagementSharedModule } from 'app/shared/shared.module';
+import { JhipsterSharedModule } from 'app/shared/shared.module';
 
 import { LogsComponent } from './logs.component';
 
 import { logsRoute } from './logs.route';
 
 @NgModule({
-  imports: [OpenCivicEngagementSharedModule, RouterModule.forChild([logsRoute])],
+  imports: [JhipsterSharedModule, RouterModule.forChild([logsRoute])],
   declarations: [LogsComponent]
 })
 export class LogsModule {}

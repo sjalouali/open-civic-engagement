@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import './vendor';
-import { OpenCivicEngagementSharedModule } from 'app/shared/shared.module';
-import { OpenCivicEngagementCoreModule } from 'app/core/core.module';
-import { OpenCivicEngagementAppRoutingModule } from './app-routing.module';
-import { OpenCivicEngagementHomeModule } from './home/home.module';
-import { OpenCivicEngagementEntityModule } from './entities/entity.module';
+import { JhipsterSharedModule } from 'app/shared/shared.module';
+import { JhipsterCoreModule } from 'app/core/core.module';
+import { JhipsterAppRoutingModule } from './app-routing.module';
+import { JhipsterHomeModule } from './home/home.module';
+import { JhipsterEntityModule } from './entities/entity.module';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { MainComponent } from './layouts/main/main.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
@@ -18,14 +18,14 @@ import { ErrorComponent } from './layouts/error/error.component';
 @NgModule({
   imports: [
     BrowserModule,
-    OpenCivicEngagementSharedModule,
-    OpenCivicEngagementCoreModule,
-    OpenCivicEngagementHomeModule,
+    JhipsterSharedModule,
+    JhipsterCoreModule,
+    JhipsterHomeModule,
     // jhipster-needle-angular-add-module JHipster will add new module here
-    OpenCivicEngagementEntityModule,
-    OpenCivicEngagementAppRoutingModule
+    JhipsterEntityModule,
+    JhipsterAppRoutingModule
   ],
   declarations: [MainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, ActiveMenuDirective, FooterComponent],
   bootstrap: [MainComponent]
 })
-export class OpenCivicEngagementAppModule {}
+export class JhipsterAppModule {}

@@ -1,0 +1,136 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="actionService">
+            <h2><span jhiTranslate="jhipsterApp.actionService.detail.title">Action Service</span> {{ actionService.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="jhipsterApp.actionService.name">Name</span></dt>
+                <dd>
+                    <span>{{ actionService.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.description">Description</span></dt>
+                <dd>
+                    <span>{{ actionService.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.nature">Nature</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'jhipsterApp.NatureService.' + actionService.nature }}">{{ actionService.nature }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.missionObjective">Mission Objective</span></dt>
+                <dd>
+                    <span>{{ actionService.missionObjective }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.amount">Amount</span></dt>
+                <dd>
+                    <span>{{ actionService.amount }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.beneficiaryNumber">Beneficiary Number</span></dt>
+                <dd>
+                    <span>{{ actionService.beneficiaryNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.volunteerNumber">Volunteer Number</span></dt>
+                <dd>
+                    <span>{{ actionService.volunteerNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.additionalInformation">Additional Information</span></dt>
+                <dd>
+                    <span>{{ actionService.additionalInformation }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{ actionService.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ actionService.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.email">Email</span></dt>
+                <dd>
+                    <span>{{ actionService.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{ actionService.phoneNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{ actionService.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{ actionService.endDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.labelAdresse">Label Adresse</span></dt>
+                <dd>
+                    <span>{{ actionService.labelAdresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.streetNumberAdresse">Street Number Adresse</span></dt>
+                <dd>
+                    <span>{{ actionService.streetNumberAdresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.routeAdresse">Route Adresse</span></dt>
+                <dd>
+                    <span>{{ actionService.routeAdresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.locality">Locality</span></dt>
+                <dd>
+                    <span>{{ actionService.locality }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.county">County</span></dt>
+                <dd>
+                    <span>{{ actionService.county }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.country">Country</span></dt>
+                <dd>
+                    <span>{{ actionService.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{ actionService.postalCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.latitude">Latitude</span></dt>
+                <dd>
+                    <span>{{ actionService.latitude }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.longitude">Longitude</span></dt>
+                <dd>
+                    <span>{{ actionService.longitude }}</span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.typeService">Type Service</span></dt>
+                <dd>
+                    <div *ngIf="actionService.typeServiceId">
+                        <a [routerLink]="['/type-service-oce', actionService.typeServiceId, 'view']">{{ actionService.typeServiceId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.user">User</span></dt>
+                <dd>
+                    <span *ngFor="let user of actionService.users; let last = last">
+                        {{ user.id }}{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="jhipsterApp.actionService.organisation">Organisation</span></dt>
+                <dd>
+                    <div *ngIf="actionService.organisationId">
+                        <a [routerLink]="['/organisation-oce', actionService.organisationId, 'view']">{{ actionService.organisationId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/action-service-oce', actionService.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

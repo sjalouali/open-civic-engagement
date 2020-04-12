@@ -1,7 +1,7 @@
 {
-  "name": "open-civic-engagement",
+  "name": "jhipster",
   "version": "0.0.1-SNAPSHOT",
-  "description": "Description for OpenCivicEngagement",
+  "description": "Description for jhipster",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

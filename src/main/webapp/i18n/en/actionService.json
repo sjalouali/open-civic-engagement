@@ -1,0 +1,47 @@
+{
+  "jhipsterApp": {
+    "actionService": {
+      "home": {
+        "title": "Action Services",
+        "createLabel": "Create a new Action Service",
+        "createOrEditLabel": "Create or edit a Action Service",
+        "notFound": "No Action Services found"
+      },
+      "created": "A new Action Service is created with identifier {{ param }}",
+      "updated": "A Action Service is updated with identifier {{ param }}",
+      "deleted": "A Action Service is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Action Service {{ id }}?"
+      },
+      "detail": {
+        "title": "Action Service"
+      },
+      "name": "Name",
+      "description": "Description",
+      "nature": "Nature",
+      "missionObjective": "Mission Objective",
+      "amount": "Amount",
+      "beneficiaryNumber": "Beneficiary Number",
+      "volunteerNumber": "Volunteer Number",
+      "additionalInformation": "Additional Information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "labelAdresse": "Label Adresse",
+      "streetNumberAdresse": "Street Number Adresse",
+      "routeAdresse": "Route Adresse",
+      "locality": "Locality",
+      "county": "County",
+      "country": "Country",
+      "postalCode": "Postal Code",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "typeService": "Type Service",
+      "user": "User",
+      "organisation": "Organisation"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "jhipsterApp": {
+    "appFile": {
+      "home": {
+        "title": "AppFiles",
+        "createLabel": "Créer un nouveau App File",
+        "createOrEditLabel": "Créer ou éditer un App File",
+        "notFound": "Aucun App File trouvé"
+      },
+      "created": "Un nouveau App File a été créé avec l'identifiant {{ param }}",
+      "updated": "Le App File avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le App File avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le App File {{ id }} ?"
+      },
+      "detail": {
+        "title": "App File"
+      },
+      "name": "Name",
+      "path": "Path",
+      "fileSize": "File Size",
+      "extention": "Extention",
+      "comment": "Comment",
+      "actionService": "Action Service"
+    }
+  }
+}

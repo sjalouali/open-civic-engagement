@@ -1,0 +1,25 @@
+{
+  "jhipsterApp": {
+    "typeService": {
+      "home": {
+        "title": "TypeServices",
+        "createLabel": "Créer un nouveau Type Service",
+        "createOrEditLabel": "Créer ou éditer un Type Service",
+        "notFound": "Aucun Type Service trouvé"
+      },
+      "created": "Un nouveau Type Service a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Type Service avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Type Service avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Type Service {{ id }} ?"
+      },
+      "detail": {
+        "title": "Type Service"
+      },
+      "nameShort": "Name Short",
+      "nameLong": "Name Long",
+      "description": "Description",
+      "typeServiceColor": "Type Service Color"
+    }
+  }
+}
