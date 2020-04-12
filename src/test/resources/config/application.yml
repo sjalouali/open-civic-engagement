@@ -15,10 +15,10 @@
 
 spring:
   application:
-    name: OpenCivicEngagement
+    name: openCivicEngagement
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:mem:OpenCivicEngagement;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    url: jdbc:h2:mem:openCivicEngagement;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     name:
     username:
     password:

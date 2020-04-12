@@ -3,7 +3,7 @@ services:
   opencivicengagement-mysql:
     image: mysql:8.0.19
     # volumes:
-    #     - ~/volumes/jhipster/OpenCivicEngagement/mysql/:/var/lib/mysql/
+    #     - ~/volumes/jhipster/openCivicEngagement/mysql/:/var/lib/mysql/
     environment:
       - MYSQL_USER=root
       - MYSQL_ALLOW_EMPTY_PASSWORD=yes
