@@ -1,0 +1,114 @@
+application {
+  config {
+  	baseName openCivicEngagement,
+    prodDatabaseType mysql,
+    packageName com.oce.app
+	cacheProvider no
+    enableHibernateCache false
+    authenticationType jwt
+    prodDatabaseType mysql
+    devDatabaseType mysql
+    nativeLanguage fr,
+    languages [en, fr, ar-ly]
+  }
+  entities *
+}
+
+/**
+ * The Organisation entity.
+ */
+
+entity Organisation {
+    name String required minlength(3)
+	description TextBlob
+    legalId String
+    accreditation String
+    additionalInformation TextBlob
+    legalStatus LegalStatus required
+}
+
+entity ActionService {
+	name String required minlength(3)
+	description TextBlob
+    nature NatureService required
+    missionObjective TextBlob
+    amount Long
+    beneficiaryNumber Long
+    volunteerNumber Long
+    additionalInformation TextBlob
+	firstName String required minlength(3)
+	lastName String required minlength(3)
+    email String
+	phoneNumber String required minlength(10)
+	startDate Instant
+    endDate Instant
+  	labelAdresse String
+	streetNumberAdresse String
+	routeAdresse String
+	locality String
+    county String
+	country String
+	postalCode String
+	latitude String
+	longitude String
+}
+
+entity TypeService {
+ 	nameShort String required minlength(3)
+	nameLong String
+	description TextBlob
+	typeServiceColor String
+}
+
+entity AppFile {
+	name String required minlength(3)
+    path String
+    fileSize String
+    extention String
+}
+
+entity Comment {
+	content TextBlob
+    commentDate Instant
+}
+
+enum NatureService {
+    DEMANDE, PROPOSITION, MISSION, AUTRE
+}
+
+enum StatusService {
+    TODO, IN_PROGRESS, DONE, PROCESSED, PENDING, REJECTED
+}
+
+enum LegalStatus {
+	NON_PROFIT_ORGANIZATION, PUBLIC_ORGANIZATION, PRIVATE_ORGANIZATION
+}
+
+relationship ManyToMany {
+    ActionService{user} to User
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Organisation{actionService} to ActionService
+}
+
+relationship ManyToOne {
+	ActionService{typeService} to TypeService
+    Comment{user} to User
+    AppFile{comment} to Comment
+  	AppFile{actionService} to ActionService
+}
+
+// set filter
+filter Organisation, ActionService, TypeService, AppFile, Comment
+
+// Set pagination options
+paginate Organisation, ActionService, TypeService, AppFile, Comment with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with oce
