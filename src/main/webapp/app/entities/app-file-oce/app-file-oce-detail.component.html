@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="appFile">
+            <h2><span jhiTranslate="openCivicEngagementApp.appFile.detail.title">App File</span> {{ appFile.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="openCivicEngagementApp.appFile.name">Name</span></dt>
+                <dd>
+                    <span>{{ appFile.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.appFile.path">Path</span></dt>
+                <dd>
+                    <span>{{ appFile.path }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.appFile.fileSize">File Size</span></dt>
+                <dd>
+                    <span>{{ appFile.fileSize }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.appFile.extention">Extention</span></dt>
+                <dd>
+                    <span>{{ appFile.extention }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.appFile.comment">Comment</span></dt>
+                <dd>
+                    <div *ngIf="appFile.commentId">
+                        <a [routerLink]="['/comment-oce', appFile.commentId, 'view']">{{ appFile.commentId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.appFile.actionService">Action Service</span></dt>
+                <dd>
+                    <div *ngIf="appFile.actionServiceId">
+                        <a [routerLink]="['/action-service-oce', appFile.actionServiceId, 'view']">{{ appFile.actionServiceId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/app-file-oce', appFile.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

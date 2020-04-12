@@ -7,6 +7,11 @@
       "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
       "entities": {
         "main": "Entités",
+        "organisationOce": "Organisation",
+        "actionServiceOce": "Action Service",
+        "typeServiceOce": "Type Service",
+        "appFileOce": "App File",
+        "commentOce": "Comment",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

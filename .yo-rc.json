@@ -5,7 +5,7 @@
     "baseName": "OpenCivicEngagement",
     "packageName": "com.oce.app",
     "packageFolder": "com/oce/app",
-    "serverPort": 8080,
+    "serverPort": "8080",
     "serviceDiscoveryType": false,
     "authenticationType": "jwt",
     "uaaBaseName": "../uaa",
@@ -24,20 +24,25 @@
     "testFrameworks": [],
     "enableTranslation": true,
     "nativeLanguage": "fr",
-    "languages": ["ar-ly", "en", "fr"],
+    "languages": ["en", "fr", "ar-ly"],
     "clientFramework": "angularX",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "6.8.0",
     "jwtSecretKey": "ZTVjMmRmOGQ0ZTg3NGM0ZmRmYWU4MjE1YmU3ZmZiYTVhNTJjZTQzYzE0YjIyNjMxYTlhMjEwMTc5MWE4NmE2NjhlNGE0ZDRkMDhjNzk3ZDllOGM3ODg5YzY3MjBiYzMxNTJhY2MyODIwY2M3NzlkNWRlNDcwYjJhYTYzZjkxMjE=",
     "embeddableLaunchScript": false,
     "clientTheme": "none",
-    "creationTimestamp": 1586616358363,
+    "creationTimestamp": 1586735700847,
     "entitySuffix": "",
     "dtoSuffix": "DTO",
     "otherModules": [],
-    "blueprints": []
+    "blueprints": [],
+    "skipUserManagement": false,
+    "skipClient": false,
+    "skipServer": false,
+    "clientThemeVariant": ""
   },
   "git-provider": "GitHub",
   "git-company": "sjalouali",
-  "repository-name": "open-civic-engagement"
+  "repository-name": "open-civic-engagement",
+  "entities": ["Organisation", "ActionService", "TypeService", "AppFile", "Comment"]
 }
