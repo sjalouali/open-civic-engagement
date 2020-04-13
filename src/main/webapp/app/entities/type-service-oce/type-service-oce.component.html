@@ -1,0 +1,77 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="openCivicEngagementApp.typeService.home.title">Type Services</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-type-service-oce" [routerLink]="['/type-service-oce/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="openCivicEngagementApp.typeService.home.createLabel">
+            Create a new Type Service
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="typeServices?.length === 0">
+        <span jhiTranslate="openCivicEngagementApp.typeService.home.notFound">No typeServices found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="typeServices?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nameShort"><span jhiTranslate="openCivicEngagementApp.typeService.nameShort">Name Short</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nameLong"><span jhiTranslate="openCivicEngagementApp.typeService.nameLong">Name Long</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="description"><span jhiTranslate="openCivicEngagementApp.typeService.description">Description</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="typeServiceColor"><span jhiTranslate="openCivicEngagementApp.typeService.typeServiceColor">Type Service Color</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uuidOce"><span jhiTranslate="openCivicEngagementApp.typeService.uuidOce">Uuid Oce</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uuidOrganisation"><span jhiTranslate="openCivicEngagementApp.typeService.uuidOrganisation">Uuid Organisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uuidEntity"><span jhiTranslate="openCivicEngagementApp.typeService.uuidEntity">Uuid Entity</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="archived"><span jhiTranslate="openCivicEngagementApp.typeService.archived">Archived</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="deleted"><span jhiTranslate="openCivicEngagementApp.typeService.deleted">Deleted</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let typeService of typeServices ;trackBy: trackId">
+                    <td><a [routerLink]="['/type-service-oce', typeService.id, 'view']">{{ typeService.id }}</a></td>
+                    <td>{{ typeService.nameShort }}</td>
+                    <td>{{ typeService.nameLong }}</td>
+                    <td>{{ typeService.description }}</td>
+                    <td>{{ typeService.typeServiceColor }}</td>
+                    <td>{{ typeService.uuidOce }}</td>
+                    <td>{{ typeService.uuidOrganisation }}</td>
+                    <td>{{ typeService.uuidEntity }}</td>
+                    <td>{{ typeService.archived }}</td>
+                    <td>{{ typeService.deleted }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/type-service-oce', typeService.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/type-service-oce', typeService.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(typeService)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

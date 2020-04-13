@@ -1,0 +1,11 @@
+id;content;comment_date;uuid_oce;uuid_organisation;uuid_entity;archived;deleted
+1;../fake-data/blob/hipster.txt;2020-04-12T10:20:41;aad7cea3-f793-4b97-a886-853239eb8ef9;920e60aa-b832-4847-a7c9-b0e8fa4666f0;1c4b2db0-525a-40c9-a06b-da068af92218;false;true
+2;../fake-data/blob/hipster.txt;2020-04-13T05:12:45;9e191a1e-31a3-4e9b-9904-c0145ca5f103;96bfb0bc-126e-4de6-937e-716bef658510;41f76455-0e44-4af5-9c4e-fdd0b24d340c;false;false
+3;../fake-data/blob/hipster.txt;2020-04-12T18:28:35;7843a021-426a-46e0-a255-3fcc0ca539c9;a8354e87-93a8-47ee-bac7-191a7fa4e985;aa73cd0b-fd06-440d-a819-f0c78dc5f04a;false;false
+4;../fake-data/blob/hipster.txt;2020-04-12T12:24:32;28b54d44-5560-4da9-8eb7-599f6e2e721a;61c619c0-f705-47c6-95e3-3fa8266564e9;6d9ed5d1-a1e2-4915-847a-35eab54c40fa;true;true
+5;../fake-data/blob/hipster.txt;2020-04-13T07:29:43;f4fa4ba1-e3b5-4b5e-984f-13403aa02949;97a3a120-a4b1-4198-9cd2-ffd354714ca4;238710f9-549b-4bd6-9dea-09d76df1fc74;false;false
+6;../fake-data/blob/hipster.txt;2020-04-12T16:14:44;48d22c1c-992e-400d-b0dc-39e885db2af0;648322c3-b364-4638-b29f-6efe51d895c8;5e632e1d-6792-4275-baec-e5bbc002acf9;true;false
+7;../fake-data/blob/hipster.txt;2020-04-12T12:36:10;286604a0-00be-4bb0-8d88-84de666c5771;4af41afc-982d-4786-b17d-75ab8764bd10;89337105-cdc0-4895-8a2a-915cd410a5fc;true;true
+8;../fake-data/blob/hipster.txt;2020-04-12T15:28:24;f7b7dd0c-a08b-4266-9f20-5c77590e2bd2;bbb78af1-c5bc-45b0-ad36-29db94f1e3a4;f896352e-6bc0-4cde-8de8-9ccb41bf6cb4;false;false
+9;../fake-data/blob/hipster.txt;2020-04-12T16:25:55;715fc465-c430-42e6-b96b-3c076d6da169;2eeae29e-908a-452d-aa20-16bc43e64a8c;5d5bd47d-9b23-41b3-b88b-2d4a1a1d7b42;false;false
+10;../fake-data/blob/hipster.txt;2020-04-12T20:33:59;48e87330-c658-44f7-99b7-eadaa329a5f2;732f2cc0-2efc-47c1-8fc6-c7ce167b6b72;acadc021-1b87-440e-a5a3-0d679b40505d;true;true

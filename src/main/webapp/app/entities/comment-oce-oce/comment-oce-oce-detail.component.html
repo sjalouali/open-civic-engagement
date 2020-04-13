@@ -1,0 +1,64 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="commentOce">
+            <h2><span jhiTranslate="openCivicEngagementApp.commentOce.detail.title">Comment Oce</span> {{ commentOce.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="openCivicEngagementApp.commentOce.content">Content</span></dt>
+                <dd>
+                    <span>{{ commentOce.content }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.commentOce.commentDate">Comment Date</span></dt>
+                <dd>
+                    <span>{{ commentOce.commentDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.commentOce.uuidOce">Uuid Oce</span></dt>
+                <dd>
+                    <span>{{ commentOce.uuidOce }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.commentOce.uuidOrganisation">Uuid Organisation</span></dt>
+                <dd>
+                    <span>{{ commentOce.uuidOrganisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.commentOce.uuidEntity">Uuid Entity</span></dt>
+                <dd>
+                    <span>{{ commentOce.uuidEntity }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.commentOce.archived">Archived</span></dt>
+                <dd>
+                    <span>{{ commentOce.archived }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.commentOce.deleted">Deleted</span></dt>
+                <dd>
+                    <span>{{ commentOce.deleted }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.commentOce.user">User</span></dt>
+                <dd>
+                    {{ commentOce.userId }}
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.commentOce.actionService">Action Service</span></dt>
+                <dd>
+                    <div *ngIf="commentOce.actionServiceId">
+                        <a [routerLink]="['/action-service-oce', commentOce.actionServiceId, 'view']">{{ commentOce.actionServiceId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/comment-oce-oce', commentOce.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

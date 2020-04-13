@@ -1,0 +1,64 @@
+{
+    "name": "CommentOce",
+    "fields": [
+        {
+            "fieldName": "content",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "commentDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "uuidOce",
+            "fieldType": "UUID"
+        },
+        {
+            "fieldName": "uuidOrganisation",
+            "fieldType": "UUID"
+        },
+        {
+            "fieldName": "uuidEntity",
+            "fieldType": "UUID"
+        },
+        {
+            "fieldName": "archived",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "deleted",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "user",
+            "otherEntityRelationshipName": "commentOce",
+            "relationshipName": "user",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "actionService",
+            "otherEntityRelationshipName": "commentOce",
+            "relationshipName": "actionService",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200413093600",
+    "entityTableName": "comment_oce",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "",
+    "applications": [
+        "OpenCivicEngagement"
+    ],
+    "angularJSSuffix": "oce"
+}

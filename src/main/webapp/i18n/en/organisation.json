@@ -1,0 +1,33 @@
+{
+  "openCivicEngagementApp": {
+    "organisation": {
+      "home": {
+        "title": "Organisations",
+        "createLabel": "Create a new Organisation",
+        "createOrEditLabel": "Create or edit a Organisation",
+        "notFound": "No Organisations found"
+      },
+      "created": "A new Organisation is created with identifier {{ param }}",
+      "updated": "A Organisation is updated with identifier {{ param }}",
+      "deleted": "A Organisation is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Organisation {{ id }}?"
+      },
+      "detail": {
+        "title": "Organisation"
+      },
+      "name": "Name",
+      "description": "Description",
+      "legalId": "Legal Id",
+      "accreditation": "Accreditation",
+      "additionalInformation": "Additional Information",
+      "legalStatus": "Legal Status",
+      "uuidOce": "Uuid Oce",
+      "uuidOrganisation": "Uuid Organisation",
+      "uuidEntity": "Uuid Entity",
+      "archived": "Archived",
+      "deleted": "Deleted",
+      "actionService": "Action Service"
+    }
+  }
+}

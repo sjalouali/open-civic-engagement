@@ -1,0 +1,156 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="actionService">
+            <h2><span jhiTranslate="openCivicEngagementApp.actionService.detail.title">Action Service</span> {{ actionService.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.name">Name</span></dt>
+                <dd>
+                    <span>{{ actionService.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.description">Description</span></dt>
+                <dd>
+                    <span>{{ actionService.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.nature">Nature</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'openCivicEngagementApp.NatureService.' + actionService.nature }}">{{ actionService.nature }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.missionObjective">Mission Objective</span></dt>
+                <dd>
+                    <span>{{ actionService.missionObjective }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.amount">Amount</span></dt>
+                <dd>
+                    <span>{{ actionService.amount }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.beneficiaryNumber">Beneficiary Number</span></dt>
+                <dd>
+                    <span>{{ actionService.beneficiaryNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.volunteerNumber">Volunteer Number</span></dt>
+                <dd>
+                    <span>{{ actionService.volunteerNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.additionalInformation">Additional Information</span></dt>
+                <dd>
+                    <span>{{ actionService.additionalInformation }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.firstName">First Name</span></dt>
+                <dd>
+                    <span>{{ actionService.firstName }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.lastName">Last Name</span></dt>
+                <dd>
+                    <span>{{ actionService.lastName }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.email">Email</span></dt>
+                <dd>
+                    <span>{{ actionService.email }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.phoneNumber">Phone Number</span></dt>
+                <dd>
+                    <span>{{ actionService.phoneNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.startDate">Start Date</span></dt>
+                <dd>
+                    <span>{{ actionService.startDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.endDate">End Date</span></dt>
+                <dd>
+                    <span>{{ actionService.endDate }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.labelAdresse">Label Adresse</span></dt>
+                <dd>
+                    <span>{{ actionService.labelAdresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.streetNumberAdresse">Street Number Adresse</span></dt>
+                <dd>
+                    <span>{{ actionService.streetNumberAdresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.routeAdresse">Route Adresse</span></dt>
+                <dd>
+                    <span>{{ actionService.routeAdresse }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.locality">Locality</span></dt>
+                <dd>
+                    <span>{{ actionService.locality }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.county">County</span></dt>
+                <dd>
+                    <span>{{ actionService.county }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.country">Country</span></dt>
+                <dd>
+                    <span>{{ actionService.country }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.postalCode">Postal Code</span></dt>
+                <dd>
+                    <span>{{ actionService.postalCode }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.latitude">Latitude</span></dt>
+                <dd>
+                    <span>{{ actionService.latitude }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.longitude">Longitude</span></dt>
+                <dd>
+                    <span>{{ actionService.longitude }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.uuidOce">Uuid Oce</span></dt>
+                <dd>
+                    <span>{{ actionService.uuidOce }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.uuidOrganisation">Uuid Organisation</span></dt>
+                <dd>
+                    <span>{{ actionService.uuidOrganisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.uuidEntity">Uuid Entity</span></dt>
+                <dd>
+                    <span>{{ actionService.uuidEntity }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.archived">Archived</span></dt>
+                <dd>
+                    <span>{{ actionService.archived }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.deleted">Deleted</span></dt>
+                <dd>
+                    <span>{{ actionService.deleted }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.typeService">Type Service</span></dt>
+                <dd>
+                    <div *ngIf="actionService.typeServiceId">
+                        <a [routerLink]="['/type-service-oce', actionService.typeServiceId, 'view']">{{ actionService.typeServiceId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.user">User</span></dt>
+                <dd>
+                    <span *ngFor="let user of actionService.users; let last = last">
+                        {{ user.id }}{{ last ? '' : ', ' }}
+                    </span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.actionService.organisation">Organisation</span></dt>
+                <dd>
+                    <div *ngIf="actionService.organisationId">
+                        <a [routerLink]="['/organisation-oce', actionService.organisationId, 'view']">{{ actionService.organisationId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/action-service-oce', actionService.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

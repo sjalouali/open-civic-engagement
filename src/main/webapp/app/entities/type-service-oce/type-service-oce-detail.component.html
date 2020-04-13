@@ -1,0 +1,62 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="typeService">
+            <h2><span jhiTranslate="openCivicEngagementApp.typeService.detail.title">Type Service</span> {{ typeService.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="openCivicEngagementApp.typeService.nameShort">Name Short</span></dt>
+                <dd>
+                    <span>{{ typeService.nameShort }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.typeService.nameLong">Name Long</span></dt>
+                <dd>
+                    <span>{{ typeService.nameLong }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.typeService.description">Description</span></dt>
+                <dd>
+                    <span>{{ typeService.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.typeService.typeServiceColor">Type Service Color</span></dt>
+                <dd>
+                    <span>{{ typeService.typeServiceColor }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.typeService.uuidOce">Uuid Oce</span></dt>
+                <dd>
+                    <span>{{ typeService.uuidOce }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.typeService.uuidOrganisation">Uuid Organisation</span></dt>
+                <dd>
+                    <span>{{ typeService.uuidOrganisation }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.typeService.uuidEntity">Uuid Entity</span></dt>
+                <dd>
+                    <span>{{ typeService.uuidEntity }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.typeService.archived">Archived</span></dt>
+                <dd>
+                    <span>{{ typeService.archived }}</span>
+                </dd>
+                <dt><span jhiTranslate="openCivicEngagementApp.typeService.deleted">Deleted</span></dt>
+                <dd>
+                    <span>{{ typeService.deleted }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/type-service-oce', typeService.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
