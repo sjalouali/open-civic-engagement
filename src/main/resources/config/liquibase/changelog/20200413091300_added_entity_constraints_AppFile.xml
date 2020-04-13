@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <!--
+        Added the constraints for entity AppFile.
+    -->
+    <changeSet id="20200413091300-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="comment_oce_id"
+                                 baseTableName="app_file"
+                                 constraintName="fk_app_file_comment_oce_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="comment_oce"/>
+
+        <addForeignKeyConstraint baseColumnNames="action_service_id"
+                                 baseTableName="app_file"
+                                 constraintName="fk_app_file_action_service_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="action_service"/>
+
+    </changeSet>
+</databaseChangeLog>

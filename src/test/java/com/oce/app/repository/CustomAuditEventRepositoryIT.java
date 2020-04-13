@@ -1,18 +1,10 @@
 package com.oce.app.repository;
 
-import static com.oce.app.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_MAX_LENGTH;
-import static org.assertj.core.api.Assertions.assertThat;
-
 import com.oce.app.OpenCivicEngagementApp;
+
 import com.oce.app.config.Constants;
 import com.oce.app.config.audit.AuditEventConverter;
 import com.oce.app.domain.PersistentAuditEvent;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import javax.servlet.http.HttpSession;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +15,23 @@ import org.springframework.mock.web.MockHttpSession;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.servlet.http.HttpSession;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static com.oce.app.repository.CustomAuditEventRepository.EVENT_DATA_COLUMN_MAX_LENGTH;
+
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
 @SpringBootTest(classes = OpenCivicEngagementApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
+
     @Autowired
     private PersistenceAuditEventRepository persistenceAuditEventRepository;
 
@@ -151,4 +154,5 @@ public class CustomAuditEventRepositoryIT {
         List<PersistentAuditEvent> persistentAuditEvents = persistenceAuditEventRepository.findAll();
         assertThat(persistentAuditEvents).hasSize(0);
     }
+
 }

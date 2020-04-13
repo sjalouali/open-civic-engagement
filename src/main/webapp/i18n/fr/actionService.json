@@ -1,0 +1,47 @@
+{
+  "openCivicEngagementApp": {
+    "actionService": {
+      "home": {
+        "title": "ActionServices",
+        "createLabel": "Créer un nouveau Action Service",
+        "createOrEditLabel": "Créer ou éditer un Action Service",
+        "notFound": "Aucun Action Service trouvé"
+      },
+      "created": "Un nouveau Action Service a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Action Service avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Action Service avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Action Service {{ id }} ?"
+      },
+      "detail": {
+        "title": "Action Service"
+      },
+      "name": "Name",
+      "description": "Description",
+      "nature": "Nature",
+      "missionObjective": "Mission Objective",
+      "amount": "Amount",
+      "beneficiaryNumber": "Beneficiary Number",
+      "volunteerNumber": "Volunteer Number",
+      "additionalInformation": "Additional Information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "startDate": "Start Date",
+      "endDate": "End Date",
+      "labelAdresse": "Label Adresse",
+      "streetNumberAdresse": "Street Number Adresse",
+      "routeAdresse": "Route Adresse",
+      "locality": "Locality",
+      "county": "County",
+      "country": "Country",
+      "postalCode": "Postal Code",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "typeService": "Type Service",
+      "user": "User",
+      "organisation": "Organisation"
+    }
+  }
+}
