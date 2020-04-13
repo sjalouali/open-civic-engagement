@@ -1,0 +1,10 @@
+{
+  "openCivicEngagementApp": {
+    "LegalStatus": {
+      "null": "",
+      "NON_PROFIT_ORGANIZATION": "NON_PROFIT_ORGANIZATION",
+      "PUBLIC_ORGANIZATION": "PUBLIC_ORGANIZATION",
+      "PRIVATE_ORGANIZATION": "PRIVATE_ORGANIZATION"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "openCivicEngagementApp": {
+    "commentOce": {
+      "home": {
+        "title": "CommentOces",
+        "createLabel": "Créer un nouveau Comment Oce",
+        "createOrEditLabel": "Créer ou éditer un Comment Oce",
+        "notFound": "Aucun Comment Oce trouvé"
+      },
+      "created": "Un nouveau Comment Oce a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Comment Oce avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Comment Oce avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Comment Oce {{ id }} ?"
+      },
+      "detail": {
+        "title": "Comment Oce"
+      },
+      "content": "Content",
+      "commentDate": "Comment Date",
+      "user": "User"
+    }
+  }
+}

@@ -1,0 +1,117 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="openCivicEngagementApp.actionService.home.title">Action Services</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-action-service-oce" [routerLink]="['/action-service-oce/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="openCivicEngagementApp.actionService.home.createLabel">
+            Create a new Action Service
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="actionServices?.length === 0">
+        <span jhiTranslate="openCivicEngagementApp.actionService.home.notFound">No actionServices found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="actionServices?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name"><span jhiTranslate="openCivicEngagementApp.actionService.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="description"><span jhiTranslate="openCivicEngagementApp.actionService.description">Description</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="nature"><span jhiTranslate="openCivicEngagementApp.actionService.nature">Nature</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="missionObjective"><span jhiTranslate="openCivicEngagementApp.actionService.missionObjective">Mission Objective</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="amount"><span jhiTranslate="openCivicEngagementApp.actionService.amount">Amount</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="beneficiaryNumber"><span jhiTranslate="openCivicEngagementApp.actionService.beneficiaryNumber">Beneficiary Number</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="volunteerNumber"><span jhiTranslate="openCivicEngagementApp.actionService.volunteerNumber">Volunteer Number</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="additionalInformation"><span jhiTranslate="openCivicEngagementApp.actionService.additionalInformation">Additional Information</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="firstName"><span jhiTranslate="openCivicEngagementApp.actionService.firstName">First Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="lastName"><span jhiTranslate="openCivicEngagementApp.actionService.lastName">Last Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="openCivicEngagementApp.actionService.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="phoneNumber"><span jhiTranslate="openCivicEngagementApp.actionService.phoneNumber">Phone Number</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="startDate"><span jhiTranslate="openCivicEngagementApp.actionService.startDate">Start Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="endDate"><span jhiTranslate="openCivicEngagementApp.actionService.endDate">End Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="labelAdresse"><span jhiTranslate="openCivicEngagementApp.actionService.labelAdresse">Label Adresse</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="streetNumberAdresse"><span jhiTranslate="openCivicEngagementApp.actionService.streetNumberAdresse">Street Number Adresse</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="routeAdresse"><span jhiTranslate="openCivicEngagementApp.actionService.routeAdresse">Route Adresse</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="locality"><span jhiTranslate="openCivicEngagementApp.actionService.locality">Locality</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="county"><span jhiTranslate="openCivicEngagementApp.actionService.county">County</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="country"><span jhiTranslate="openCivicEngagementApp.actionService.country">Country</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="postalCode"><span jhiTranslate="openCivicEngagementApp.actionService.postalCode">Postal Code</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="latitude"><span jhiTranslate="openCivicEngagementApp.actionService.latitude">Latitude</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="longitude"><span jhiTranslate="openCivicEngagementApp.actionService.longitude">Longitude</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="typeServiceId"><span jhiTranslate="openCivicEngagementApp.actionService.typeService">Type Service</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="organisationId"><span jhiTranslate="openCivicEngagementApp.actionService.organisation">Organisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let actionService of actionServices ;trackBy: trackId">
+                    <td><a [routerLink]="['/action-service-oce', actionService.id, 'view']">{{ actionService.id }}</a></td>
+                    <td>{{ actionService.name }}</td>
+                    <td>{{ actionService.description }}</td>
+                    <td jhiTranslate="{{ 'openCivicEngagementApp.NatureService.' + actionService.nature }}">{{ actionService.nature }}</td>
+                    <td>{{ actionService.missionObjective }}</td>
+                    <td>{{ actionService.amount }}</td>
+                    <td>{{ actionService.beneficiaryNumber }}</td>
+                    <td>{{ actionService.volunteerNumber }}</td>
+                    <td>{{ actionService.additionalInformation }}</td>
+                    <td>{{ actionService.firstName }}</td>
+                    <td>{{ actionService.lastName }}</td>
+                    <td>{{ actionService.email }}</td>
+                    <td>{{ actionService.phoneNumber }}</td>
+                    <td>{{ actionService.startDate | date:'medium' }}</td>
+                    <td>{{ actionService.endDate | date:'medium' }}</td>
+                    <td>{{ actionService.labelAdresse }}</td>
+                    <td>{{ actionService.streetNumberAdresse }}</td>
+                    <td>{{ actionService.routeAdresse }}</td>
+                    <td>{{ actionService.locality }}</td>
+                    <td>{{ actionService.county }}</td>
+                    <td>{{ actionService.country }}</td>
+                    <td>{{ actionService.postalCode }}</td>
+                    <td>{{ actionService.latitude }}</td>
+                    <td>{{ actionService.longitude }}</td>
+                    <td>
+                        <div *ngIf="actionService.typeServiceId">
+                            <a [routerLink]="['/type-service-oce', actionService.typeServiceId , 'view']" >{{ actionService.typeServiceId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="actionService.organisationId">
+                            <a [routerLink]="['/organisation-oce', actionService.organisationId , 'view']" >{{ actionService.organisationId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/action-service-oce', actionService.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/action-service-oce', actionService.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(actionService)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
