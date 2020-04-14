@@ -1,0 +1,11 @@
+{
+  "openCivicEngagementApp": {
+    "NatureService": {
+      "null": "",
+      "DEMANDE": "DEMANDE",
+      "PROPOSITION": "PROPOSITION",
+      "MISSION": "MISSION",
+      "AUTRE": "AUTRE"
+    }
+  }
+}

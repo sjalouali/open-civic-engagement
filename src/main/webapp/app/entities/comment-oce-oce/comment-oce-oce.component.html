@@ -1,0 +1,83 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="openCivicEngagementApp.commentOce.home.title">Comment Oces</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-comment-oce-oce" [routerLink]="['/comment-oce-oce/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="openCivicEngagementApp.commentOce.home.createLabel">
+            Create a new Comment Oce
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="commentOces?.length === 0">
+        <span jhiTranslate="openCivicEngagementApp.commentOce.home.notFound">No commentOces found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="commentOces?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="content"><span jhiTranslate="openCivicEngagementApp.commentOce.content">Content</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentDate"><span jhiTranslate="openCivicEngagementApp.commentOce.commentDate">Comment Date</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uuidOce"><span jhiTranslate="openCivicEngagementApp.commentOce.uuidOce">Uuid Oce</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uuidOrganisation"><span jhiTranslate="openCivicEngagementApp.commentOce.uuidOrganisation">Uuid Organisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uuidEntity"><span jhiTranslate="openCivicEngagementApp.commentOce.uuidEntity">Uuid Entity</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="archived"><span jhiTranslate="openCivicEngagementApp.commentOce.archived">Archived</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="deleted"><span jhiTranslate="openCivicEngagementApp.commentOce.deleted">Deleted</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="userId"><span jhiTranslate="openCivicEngagementApp.commentOce.user">User</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="actionServiceId"><span jhiTranslate="openCivicEngagementApp.commentOce.actionService">Action Service</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let commentOce of commentOces ;trackBy: trackId">
+                    <td><a [routerLink]="['/comment-oce-oce', commentOce.id, 'view']">{{ commentOce.id }}</a></td>
+                    <td>{{ commentOce.content }}</td>
+                    <td>{{ commentOce.commentDate | date:'medium' }}</td>
+                    <td>{{ commentOce.uuidOce }}</td>
+                    <td>{{ commentOce.uuidOrganisation }}</td>
+                    <td>{{ commentOce.uuidEntity }}</td>
+                    <td>{{ commentOce.archived }}</td>
+                    <td>{{ commentOce.deleted }}</td>
+                    <td>
+                        {{ commentOce.userId }}
+                    </td>
+                    <td>
+                        <div *ngIf="commentOce.actionServiceId">
+                            <a [routerLink]="['/action-service-oce', commentOce.actionServiceId , 'view']" >{{ commentOce.actionServiceId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/comment-oce-oce', commentOce.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/comment-oce-oce', commentOce.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(commentOce)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

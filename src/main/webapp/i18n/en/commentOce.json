@@ -1,0 +1,30 @@
+{
+  "openCivicEngagementApp": {
+    "commentOce": {
+      "home": {
+        "title": "Comment Oces",
+        "createLabel": "Create a new Comment Oce",
+        "createOrEditLabel": "Create or edit a Comment Oce",
+        "notFound": "No Comment Oces found"
+      },
+      "created": "A new Comment Oce is created with identifier {{ param }}",
+      "updated": "A Comment Oce is updated with identifier {{ param }}",
+      "deleted": "A Comment Oce is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Comment Oce {{ id }}?"
+      },
+      "detail": {
+        "title": "Comment Oce"
+      },
+      "content": "Content",
+      "commentDate": "Comment Date",
+      "uuidOce": "Uuid Oce",
+      "uuidOrganisation": "Uuid Organisation",
+      "uuidEntity": "Uuid Entity",
+      "archived": "Archived",
+      "deleted": "Deleted",
+      "user": "User",
+      "actionService": "Action Service"
+    }
+  }
+}

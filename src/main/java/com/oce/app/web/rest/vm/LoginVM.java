@@ -7,6 +7,7 @@ import javax.validation.constraints.Size;
  * View Model object for storing a user's credentials.
  */
 public class LoginVM {
+
     @NotNull
     @Size(min = 1, max = 50)
     private String username;
@@ -43,6 +44,9 @@ public class LoginVM {
 
     @Override
     public String toString() {
-        return "LoginVM{" + "username='" + username + '\'' + ", rememberMe=" + rememberMe + '}';
+        return "LoginVM{" +
+            "username='" + username + '\'' +
+            ", rememberMe=" + rememberMe +
+            '}';
     }
 }

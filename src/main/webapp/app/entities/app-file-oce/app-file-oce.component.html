@@ -1,0 +1,89 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="openCivicEngagementApp.appFile.home.title">App Files</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-app-file-oce" [routerLink]="['/app-file-oce/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="openCivicEngagementApp.appFile.home.createLabel">
+            Create a new App File
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="appFiles?.length === 0">
+        <span jhiTranslate="openCivicEngagementApp.appFile.home.notFound">No appFiles found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="appFiles?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="name"><span jhiTranslate="openCivicEngagementApp.appFile.name">Name</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="path"><span jhiTranslate="openCivicEngagementApp.appFile.path">Path</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fileSize"><span jhiTranslate="openCivicEngagementApp.appFile.fileSize">File Size</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="extention"><span jhiTranslate="openCivicEngagementApp.appFile.extention">Extention</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uuidOce"><span jhiTranslate="openCivicEngagementApp.appFile.uuidOce">Uuid Oce</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uuidOrganisation"><span jhiTranslate="openCivicEngagementApp.appFile.uuidOrganisation">Uuid Organisation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="uuidEntity"><span jhiTranslate="openCivicEngagementApp.appFile.uuidEntity">Uuid Entity</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="archived"><span jhiTranslate="openCivicEngagementApp.appFile.archived">Archived</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="deleted"><span jhiTranslate="openCivicEngagementApp.appFile.deleted">Deleted</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="commentOceId"><span jhiTranslate="openCivicEngagementApp.appFile.commentOce">Comment Oce</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="actionServiceId"><span jhiTranslate="openCivicEngagementApp.appFile.actionService">Action Service</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+                <tr *ngFor="let appFile of appFiles ;trackBy: trackId">
+                    <td><a [routerLink]="['/app-file-oce', appFile.id, 'view']">{{ appFile.id }}</a></td>
+                    <td>{{ appFile.name }}</td>
+                    <td>{{ appFile.path }}</td>
+                    <td>{{ appFile.fileSize }}</td>
+                    <td>{{ appFile.extention }}</td>
+                    <td>{{ appFile.uuidOce }}</td>
+                    <td>{{ appFile.uuidOrganisation }}</td>
+                    <td>{{ appFile.uuidEntity }}</td>
+                    <td>{{ appFile.archived }}</td>
+                    <td>{{ appFile.deleted }}</td>
+                    <td>
+                        <div *ngIf="appFile.commentOceId">
+                            <a [routerLink]="['/comment-oce-oce', appFile.commentOceId , 'view']" >{{ appFile.commentOceId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="appFile.actionServiceId">
+                            <a [routerLink]="['/action-service-oce', appFile.actionServiceId , 'view']" >{{ appFile.actionServiceId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/app-file-oce', appFile.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/app-file-oce', appFile.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(appFile)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

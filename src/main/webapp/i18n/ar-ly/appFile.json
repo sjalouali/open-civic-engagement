@@ -1,0 +1,32 @@
+{
+  "openCivicEngagementApp": {
+    "appFile": {
+      "home": {
+        "title": "App Files",
+        "createLabel": "Create a new App File",
+        "createOrEditLabel": "Create or edit a App File",
+        "notFound": "No App Files found"
+      },
+      "created": "A new App File is created with identifier {{ param }}",
+      "updated": "A App File is updated with identifier {{ param }}",
+      "deleted": "A App File is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete App File {{ id }}?"
+      },
+      "detail": {
+        "title": "App File"
+      },
+      "name": "Name",
+      "path": "Path",
+      "fileSize": "File Size",
+      "extention": "Extention",
+      "uuidOce": "Uuid Oce",
+      "uuidOrganisation": "Uuid Organisation",
+      "uuidEntity": "Uuid Entity",
+      "archived": "Archived",
+      "deleted": "Deleted",
+      "commentOce": "Comment Oce",
+      "actionService": "Action Service"
+    }
+  }
+}
