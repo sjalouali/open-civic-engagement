@@ -28,6 +28,7 @@
     "actionServiceMission": {
       "title": "Trouver une mission",
       "description": "Trouvez une mission au plus près de chez vous",
+      "descriptionBis": "(Disponible prochainement)",
       "button": "Je cherche un mission"
     }
   }
