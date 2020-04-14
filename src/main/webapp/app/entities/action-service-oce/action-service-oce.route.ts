@@ -39,7 +39,7 @@ export const actionServiceRoute: Routes = [
     path: '',
     component: ActionServiceOceComponent,
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.USER, Authority.USER_ORGANISATION, Authority.ADMIN_ORGANISATION],
       pageTitle: 'openCivicEngagementApp.actionService.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -51,7 +51,7 @@ export const actionServiceRoute: Routes = [
       actionService: ActionServiceOceResolve
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.USER, Authority.USER_ORGANISATION, Authority.ADMIN_ORGANISATION],
       pageTitle: 'openCivicEngagementApp.actionService.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -63,7 +63,7 @@ export const actionServiceRoute: Routes = [
       actionService: ActionServiceOceResolve
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.USER, Authority.USER_ORGANISATION, Authority.ADMIN_ORGANISATION],
       pageTitle: 'openCivicEngagementApp.actionService.home.title'
     },
     canActivate: [UserRouteAccessService]
@@ -75,7 +75,7 @@ export const actionServiceRoute: Routes = [
       actionService: ActionServiceOceResolve
     },
     data: {
-      authorities: [Authority.USER],
+      authorities: [Authority.USER, Authority.USER_ORGANISATION, Authority.ADMIN_ORGANISATION],
       pageTitle: 'openCivicEngagementApp.actionService.home.title'
     },
     canActivate: [UserRouteAccessService]

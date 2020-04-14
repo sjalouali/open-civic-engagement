@@ -141,4 +141,23 @@ public class ActionServiceResource {
         actionServiceService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
     }
+    
+    /**
+     * {@code POST  /action-services} : Create a new actionService.
+     *
+     * @param actionServiceDTO the actionServiceDTO to create.
+     * @return the {@link ResponseEntity} with status {@code 201 (Created)} and with body the new actionServiceDTO, or with status {@code 400 (Bad Request)} if the actionService has already an ID.
+     * @throws URISyntaxException if the Location URI syntax is incorrect.
+     */
+    @PostMapping("/p/action-services")
+    public ResponseEntity<ActionServiceDTO> createActionServicePublic(@Valid @RequestBody ActionServiceDTO actionServiceDTO) throws URISyntaxException {
+        log.debug("REST request to save ActionService : {}", actionServiceDTO);
+        if (actionServiceDTO.getId() != null) {
+            throw new BadRequestAlertException("A new actionService cannot already have an ID", ENTITY_NAME, "idexists");
+        }
+        ActionServiceDTO result = actionServiceService.save(actionServiceDTO);
+        return ResponseEntity.created(new URI("/api/p/action-services/" + result.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
+            .body(result);
+    }
 }

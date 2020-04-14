@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "Bienvenue, Java Hipster !",
-    "subtitle": "Ceci est votre page d'accueil",
+    "title": "Mettre en relation bénévoles, associations et personnes en difficulté sociale",
+    "subtitle": "Promouvoir l’engagement citoyen en facilitant le rapprochement de tous les acteurs grâce à notre plateforme de mise en relation bénévoles-associations et accompagner l’ensemble des acteurs en partageant nos compétences et expertises de terrain.",
     "logged": {
       "message": "Vous êtes connecté en tant que \"{{username}}\"."
     },
@@ -14,6 +14,21 @@
       "follow": "Suivez @jhipster sur Twitter"
     },
     "like": "Si vous aimez JHipster, donnez nous une étoile sur",
-    "github": "GitHub "
+    "github": "GitHub ",
+    "actionServiceDemande": {
+      "title": "Demander de l'aide",
+      "description": "Pour faire face à des difficultés rencontrées... (financière, hébergement, administratif, alimentaire, autres)",
+      "button": "J'ai besoin d'aide"
+    },
+    "actionServiceProposition": {
+      "title": "Proposer de d'aide",
+      "description": "Vous pouvez aider et contribuer de la manière que souhaitez... (financière, hébergement, administratif, alimentaire, autre )",
+      "button": "Je propose mon aide"
+    },
+    "actionServiceMission": {
+      "title": "Trouver une mission",
+      "description": "Trouvez une mission au plus près de chez vous",
+      "button": "Je cherche un mission"
+    }
   }
 }

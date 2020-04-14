@@ -6,6 +6,10 @@ package com.oce.app.security;
 public final class AuthoritiesConstants {
 
     public static final String ADMIN = "ROLE_ADMIN";
+    
+    public static final String ADMIN_ORGANISATION = "ROLE_ADMIN_ORGANISATION";
+    
+    public static final String USER_ORGANISATION = "ROLE_USER_ORGANISATION";
 
     public static final String USER = "ROLE_USER";
 

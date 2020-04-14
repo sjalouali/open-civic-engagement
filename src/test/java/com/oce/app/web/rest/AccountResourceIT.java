@@ -129,7 +129,7 @@ public class AccountResourceIT {
         assertThat(userRepository.findOneByLogin("test-register-valid").isPresent()).isFalse();
 
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(validUser)))
             .andExpect(status().isCreated());
@@ -152,7 +152,7 @@ public class AccountResourceIT {
         invalidUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(invalidUser)))
             .andExpect(status().isBadRequest());
@@ -176,7 +176,7 @@ public class AccountResourceIT {
         invalidUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(invalidUser)))
             .andExpect(status().isBadRequest());
@@ -200,7 +200,7 @@ public class AccountResourceIT {
         invalidUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(invalidUser)))
             .andExpect(status().isBadRequest());
@@ -224,7 +224,7 @@ public class AccountResourceIT {
         invalidUser.setAuthorities(Collections.singleton(AuthoritiesConstants.USER));
 
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(invalidUser)))
             .andExpect(status().isBadRequest());
@@ -264,14 +264,14 @@ public class AccountResourceIT {
 
         // First user
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(firstUser)))
             .andExpect(status().isCreated());
 
         // Second (non activated) user
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(secondUser)))
             .andExpect(status().isCreated());
@@ -283,7 +283,7 @@ public class AccountResourceIT {
 
         // Second (already activated) user
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(secondUser)))
             .andExpect(status().is4xxClientError());
@@ -305,7 +305,7 @@ public class AccountResourceIT {
 
         // Register first user
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(firstUser)))
             .andExpect(status().isCreated());
@@ -326,7 +326,7 @@ public class AccountResourceIT {
 
         // Register second (non activated) user
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(secondUser)))
             .andExpect(status().isCreated());
@@ -351,7 +351,7 @@ public class AccountResourceIT {
 
         // Register third (not activated) user
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(userWithUpperCaseEmail)))
             .andExpect(status().isCreated());
@@ -365,7 +365,7 @@ public class AccountResourceIT {
 
         // Register 4th (already activated) user
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(secondUser)))
             .andExpect(status().is4xxClientError());
@@ -386,7 +386,7 @@ public class AccountResourceIT {
         validUser.setAuthorities(Collections.singleton(AuthoritiesConstants.ADMIN));
 
         restAccountMockMvc.perform(
-            post("/api/register")
+            post("/api/p/register")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(TestUtil.convertObjectToJsonBytes(validUser)))
             .andExpect(status().isCreated());

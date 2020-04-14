@@ -11,6 +11,8 @@ import { PasswordResetInitComponent } from './password-reset/init/password-reset
 import { PasswordResetFinishComponent } from './password-reset/finish/password-reset-finish.component';
 import { SettingsComponent } from './settings/settings.component';
 import { accountState } from './account.route';
+import { ActionServiceOceUpdateComponent } from './register-action-service-oce/register-action-service-oce-update.component';
+import { PlacesComponent } from './places.component';
 
 @NgModule({
   imports: [OpenCivicEngagementSharedModule, RouterModule.forChild(accountState)],
@@ -21,7 +23,9 @@ import { accountState } from './account.route';
     PasswordStrengthBarComponent,
     PasswordResetInitComponent,
     PasswordResetFinishComponent,
-    SettingsComponent
+    SettingsComponent,
+    ActionServiceOceUpdateComponent,
+    PlacesComponent
   ]
 })
 export class AccountModule {}
