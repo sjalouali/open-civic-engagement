@@ -39,7 +39,11 @@
     "skipUserManagement": false,
     "skipClient": false,
     "skipServer": false,
-    "clientThemeVariant": ""
+    "clientThemeVariant": "",
+    "azureAppServicePlan": "gasttn",
+    "azureApplicationInsightsName": "gast-tn",
+    "azureAppServiceName": "gest-tn",
+    "azureAppServiceDeploymentType": "local"
   },
   "git-provider": "GitHub",
   "git-company": "sjalouali",
