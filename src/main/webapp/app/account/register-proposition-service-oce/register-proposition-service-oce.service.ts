@@ -12,7 +12,7 @@ type EntityResponseType = HttpResponse<IActionServiceOce>;
 type EntityArrayResponseType = HttpResponse<IActionServiceOce[]>;
 
 @Injectable({ providedIn: 'root' })
-export class ActionServiceOceService {
+export class PropositionServiceOceService {
   public resourceUrl = SERVER_API_URL + 'api/action-services';
 
   constructor(protected http: HttpClient) {}

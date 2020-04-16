@@ -42,7 +42,7 @@
     "clientThemeVariant": "",
     "azureAppServicePlan": "gasttn",
     "azureApplicationInsightsName": "gast-tn",
-    "azureAppServiceName": "gest-tn",
+    "azureAppServiceName": "gast-tn",
     "azureAppServiceDeploymentType": "local"
   },
   "git-provider": "GitHub",

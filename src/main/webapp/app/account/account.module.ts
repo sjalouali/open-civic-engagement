@@ -12,6 +12,7 @@ import { PasswordResetFinishComponent } from './password-reset/finish/password-r
 import { SettingsComponent } from './settings/settings.component';
 import { accountState } from './account.route';
 import { ActionServiceOceUpdateComponent } from './register-action-service-oce/register-action-service-oce-update.component';
+import { PropositionServiceOceUpdateComponent } from './register-proposition-service-oce/register-proposition-service-oce-update.component';
 import { PlacesComponent } from './places.component';
 
 @NgModule({
@@ -25,6 +26,7 @@ import { PlacesComponent } from './places.component';
     PasswordResetFinishComponent,
     SettingsComponent,
     ActionServiceOceUpdateComponent,
+    PropositionServiceOceUpdateComponent,
     PlacesComponent
   ]
 })

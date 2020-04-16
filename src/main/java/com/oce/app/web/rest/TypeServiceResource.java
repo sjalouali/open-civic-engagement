@@ -104,6 +104,14 @@ public class TypeServiceResource {
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
+    @GetMapping("/p/type-services")
+    public ResponseEntity<List<TypeServiceDTO>> getAllTypeServicesP(TypeServiceCriteria criteria, Pageable pageable) {
+        log.debug("REST request to get TypeServices by criteria: {}", criteria);
+        Page<TypeServiceDTO> page = typeServiceQueryService.findByCriteria(criteria, pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
     /**
      * {@code GET  /type-services/count} : count all the typeServices.
      *

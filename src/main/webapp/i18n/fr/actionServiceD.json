@@ -1,0 +1,52 @@
+{
+  "openCivicEngagementApp": {
+    "actionServiceD": {
+      "home": {
+        "title": "Faire une demande d'aide",
+        "createLabel": "Faire une demande d'aide",
+        "createOrEditLabel": "Faire une demande d'aide",
+        "notFound": "Aucun Action Service trouvé"
+      },
+      "created": "Un nouveau Action Service a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Action Service avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Action Service avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Action Service {{ id }} ?"
+      },
+      "detail": {
+        "title": "Action Service"
+      },
+      "name": "Objet de la demande",
+      "description": "Détail de la demande",
+      "nature": "Nature",
+      "missionObjective": "Objectif de la mission",
+      "amount": "Montant €",
+      "beneficiaryNumber": "Nombre de beneficiaires",
+      "volunteerNumber": "Nombre de volontaires necessaire",
+      "additionalInformation": "Additional Information",
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Email",
+      "phoneNumber": "Numéro de téléphone",
+      "startDate": "Date début",
+      "endDate": "Date écheance",
+      "labelAdresse": "Adresse",
+      "streetNumberAdresse": "Street Number Adresse",
+      "routeAdresse": "Route Adresse",
+      "locality": "Ville",
+      "county": "Département",
+      "country": "Pays",
+      "postalCode": "Code postal",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "uuidOce": "Uuid Oce",
+      "uuidOrganisation": "Uuid Organisation",
+      "uuidEntity": "Uuid Entity",
+      "archived": "Archived",
+      "deleted": "Deleted",
+      "typeService": "Type de Service",
+      "user": "User",
+      "organisation": "Organisation"
+    }
+  }
+}

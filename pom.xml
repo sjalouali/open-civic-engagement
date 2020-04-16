@@ -396,7 +396,7 @@
                 <configuration>
                     <schemaVersion>V2</schemaVersion>
                     <resourceGroup>gast</resourceGroup>
-                    <appName>gest-tn</appName>
+                    <appName>gast-tn</appName>
                     <deployment>
                         <resources>
                             <resource>

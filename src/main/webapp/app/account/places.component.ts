@@ -4,7 +4,7 @@ import places from 'places.js';
 @Component({
   selector: 'jhi-app-places',
   template: `
-    <input #input type="search" placeholder="Where are we going?" />
+    <input #input type="search" placeholder="Rechercher une adresse ..." />
   `
 })
 export class PlacesComponent implements AfterViewInit, OnDestroy, OnChanges {

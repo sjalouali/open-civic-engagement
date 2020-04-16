@@ -30,6 +30,12 @@
       "description": "Trouvez une mission au plus près de chez vous",
       "descriptionBis": "(Disponible prochainement)",
       "button": "Je cherche un mission"
+    },
+    "actionServiceDon": {
+      "title": "Faire un don financier ",
+      "description": "Participer à la cagnotte en ligne",
+      "descriptionBis": "RAMADAN 2020",
+      "button": "Je participe"
     }
   }
 }

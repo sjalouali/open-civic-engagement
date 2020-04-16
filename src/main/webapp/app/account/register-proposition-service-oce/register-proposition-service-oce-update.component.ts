@@ -10,7 +10,7 @@ import { JhiDataUtils, JhiFileLoadError, JhiEventManager, JhiEventWithContent } 
 
 import { IActionServiceOce, ActionServiceOce } from 'app/shared/model/action-service-oce.model';
 import { NatureService } from 'app/shared/model/enumerations/nature-service.model';
-import { ActionServiceOceService } from './register-action-service-oce.service';
+import { PropositionServiceOceService } from './register-proposition-service-oce.service';
 import { AlertError } from 'app/shared/alert/alert-error.model';
 import { ITypeServiceOce } from 'app/shared/model/type-service-oce.model';
 import { TypeServiceOceService } from 'app/entities/type-service-oce/type-service-oce.service';
@@ -22,10 +22,10 @@ import { OrganisationOceService } from 'app/entities/organisation-oce/organisati
 type SelectableEntity = ITypeServiceOce | IUser | IOrganisationOce;
 
 @Component({
-  selector: 'jhi-register-action-service-oce-update',
-  templateUrl: './register-action-service-oce-update.component.html'
+  selector: 'jhi-register-proposition-service-oce-update',
+  templateUrl: './register-proposition-service-oce-update.component.html'
 })
-export class ActionServiceOceUpdateComponent implements OnInit {
+export class PropositionServiceOceUpdateComponent implements OnInit {
   isSaving = false;
   typeservices: ITypeServiceOce[] = [];
   users: IUser[] = [];
@@ -69,7 +69,7 @@ export class ActionServiceOceUpdateComponent implements OnInit {
   constructor(
     protected dataUtils: JhiDataUtils,
     protected eventManager: JhiEventManager,
-    protected actionServiceService: ActionServiceOceService,
+    protected actionServiceService: PropositionServiceOceService,
     protected typeServiceService: TypeServiceOceService,
     protected userService: UserService,
     protected organisationService: OrganisationOceService,
@@ -82,7 +82,7 @@ export class ActionServiceOceUpdateComponent implements OnInit {
     // INIT form demande
     const today = moment().startOf('day');
     this.editForm.patchValue({
-      nature: NatureService.DEMANDE,
+      nature: NatureService.PROPOSITION,
       startDate: today,
       endDate: today
     });
